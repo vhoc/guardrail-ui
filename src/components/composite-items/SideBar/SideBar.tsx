@@ -9,16 +9,22 @@ import { SideBarItemType } from "../../../types/types";
 
 interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {
   /** The width and the maximum width of the SideBar when it's open. */
-  width?: string | undefined;
+  width: string;
   /** Z-Index CSS property for the SideBar in case it's needed. */
-  zIndex?: string | undefined;
+  zIndex: string;
   /** Initial array of items marked as favorites. */
-  favorites?: Array<SideBarItemType> | undefined;
+  favorites: Array<SideBarItemType>;
   /** Initial array of items in the SideBar */
-  items?: Array<SideBarItemType> | undefined;
+  items: Array<SideBarItemType>;
 }
 
-export const SideBar: React.FC<SideBarProps> = (props) => {
+export const SideBar = ({
+  width,
+  zIndex,
+  favorites,
+  items,
+  ...props
+}: SideBarProps): JSX.Element => {
   const [open, setOpen] = React.useState(true);
   const [hidden, setHidden] = React.useState(false);
   const [selectedFavorite, setSelectedFavorite] = React.useState<number | null>(
@@ -27,22 +33,26 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
   const [selectedItem, setSelectedItem] = React.useState<number | null>(null);
   const [newFavorite, setNewFavorite] = React.useState(false);
 
-  const [newFavorites, setNewFavorites] = React.useState(props.favorites);
-  const [newItems, setNewItems] = React.useState(props.items);
+  const [newFavorites, setNewFavorites] = React.useState(favorites);
+  const [newItems, setNewItems] = React.useState(items);
 
   const handleFavoritesChange = (id: number) => {
-    if (newFavorites && newFavorites.length >= 1) {
+    if (newFavorites) {
       const foundFavorite = newFavorites.find((item) => item.id === id);
 
       if (foundFavorite) {
         setNewFavorites((prevState) => {
           if (prevState) {
             return prevState.filter((item) => item.id !== id);
+          } else {
+            return prevState;
           }
         });
         setNewItems((prevState) => {
           if (prevState) {
             return [...prevState, foundFavorite];
+          } else {
+            return prevState;
           }
         });
       } else {
@@ -52,11 +62,15 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
             setNewFavorites((prevState) => {
               if (prevState) {
                 return [...prevState, itemToAdd];
+              } else {
+                return prevState;
               }
             });
             setNewItems((prevState) => {
               if (prevState) {
                 return [...prevState.filter((item) => item.id !== id)];
+              } else {
+                return prevState;
               }
             });
             setNewFavorite(true);
@@ -121,7 +135,8 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
     <div
       className={`${styles.container} ${!open ? styles.collapsed : ""}`}
       style={{
-        zIndex: props.zIndex,
+        zIndex: zIndex,
+        width: width,
       }}
       {...props}
     >
@@ -198,4 +213,11 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
       </div>
     </div>
   );
+};
+
+SideBar.defaultProps = {
+  width: "320px",
+  zIndex: "2",
+  favorites: [],
+  items: [],
 };

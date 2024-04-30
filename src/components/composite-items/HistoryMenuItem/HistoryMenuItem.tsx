@@ -72,7 +72,10 @@ const HistoryMenuItem: React.FC<HistoryMenuItemProps> = (
               <FontAwesomeIcon icon={faBook} color={"#9F68CA"} size={"xs"} />
             ) : null}
           </div>
-          <button onClick={() => setOpen((prevState) => !prevState)}>
+          <button
+            className={styles.icnButton}
+            onClick={() => setOpen((prevState) => !prevState)}
+          >
             <FontAwesomeIcon
               icon={open ? faTimes : faEllipsis}
               color={"#E3C5FB"}

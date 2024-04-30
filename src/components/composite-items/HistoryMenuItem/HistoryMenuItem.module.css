@@ -74,7 +74,7 @@ button {
    gap: 10px;
 }
 
-button {
+.icnButton {
    background: transparent;
    width: 20px;
    height: 20px;
