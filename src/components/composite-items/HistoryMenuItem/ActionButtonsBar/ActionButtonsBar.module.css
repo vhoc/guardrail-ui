@@ -1,0 +1,25 @@
+.container {
+   background-color: #181D2C;
+   border-radius: 3px;
+   padding: 12px;
+   display: flex;
+   justify-content: space-between;
+   max-height: 44px;
+   -webkit-transition: max-height 0.618s; 
+   -moz-transition: max-height 0.618s; 
+   -ms-transition: max-height 0.618s; 
+   -o-transition: max-height 0.618s; 
+   transition: max-height 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.collapsed {
+   max-height: 0px;
+   padding: 0px;
+   -webkit-transition: max-height 0.618s; 
+   -moz-transition: max-height 0.618s; 
+   -ms-transition: max-height 0.618s; 
+   -o-transition: max-height 0.618s; 
+   transition: max-height 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}

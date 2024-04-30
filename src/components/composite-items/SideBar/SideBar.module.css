@@ -1,0 +1,123 @@
+* {
+   box-sizing: border-box;
+}
+
+button {
+   padding: 0px;
+   margin: 0px;
+   border: none;
+   cursor: pointer;
+   padding-inline: 0px;
+   padding-block: 0px;
+}
+
+.container {
+   background-color: #23293B;
+   height: 100%;
+   width: 320px;
+   max-width: 320px;
+   opacity: 1;
+   border-radius: 0px 12px 12px 0px;
+   padding-inline: 14px;
+   padding-block: 16px;
+   -webkit-transition: all 0.618s;
+   -moz-transition: all 0.618s; 
+   -ms-transition: all 0.618s; 
+   -o-transition: all 0.618s; 
+   transition: all 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+   position: relative;
+   box-sizing: border-box;
+}
+
+.topSection {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-inline: 8px;
+}
+
+.topLeftSection {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   background-color: rgba(0, 0, 0, 0);
+   width: 160px;
+   min-width: 0px;
+}
+
+.topLeftButtonText {
+   color: white;
+   font-family: 'Poppins', sans-serif;
+   font-size: 16px;
+   font-weight: bolder;
+   min-width: 0px;
+}
+
+.newButton {
+   padding: 4px 12px 4px 12px;
+   background-color: #0065FF;
+   border-radius: 4px;
+   color: white;
+   font-size: 14px;
+   font-weight: 500;
+   font-family: 'Poppins', sans-serif;
+   display: flex;
+   gap: 12px;
+   align-items: center;
+   height: 35px;
+   width: 78px;
+   min-width: 0px;
+}
+
+.newButton:hover {
+   background-color: #2279FF;
+}
+
+.newButton:active {
+   background-color: #0065FF;
+}
+
+.newButton:disabled {
+   background-color: #E1E4EC;
+}
+
+.bottomSection {
+   margin-top: 20px;
+   /* padding-left: 8px; */
+   display: flex;
+   flex-direction: column;
+}
+
+.favoritesHeader {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 8px;
+}
+
+
+.label {
+   font-family: 'Inter Variable', sans-serif;
+   font-size: 12px;
+   font-weight: 600;
+   text-transform: uppercase;
+   color: #E3C5FB;
+}
+
+.itemsContainer {
+   display: flex;
+   flex-direction: column;
+}
+
+.collapsed {
+   padding-inline: 0px;
+   max-width: 0px;
+   opacity: 0;
+   -webkit-transition: all 0.618s; 
+   -moz-transition: all 0.618s; 
+   -ms-transition: all 0.618s; 
+   -o-transition: all 0.618s; 
+   transition: all 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}

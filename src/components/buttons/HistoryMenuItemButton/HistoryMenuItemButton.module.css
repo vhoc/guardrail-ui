@@ -1,0 +1,59 @@
+.button {
+   width: 16px;
+   height: 16px;
+   max-height: 16px;
+   background: #181d2c;
+   color: #B987E1;
+   -webkit-transition: max-height 0.618s; 
+   -moz-transition: max-height 0.618s; 
+   -ms-transition: max-height 0.618s; 
+   -o-transition: max-height 0.618s; 
+   transition: max-height 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.button:hover {
+   color: #9F68CA;
+}
+
+.button:active {
+   color: white;
+}
+
+.button:disabled {
+   color: #E1E4EC;
+}
+
+.sizeSmall {
+   width: 20px;
+   height: 20px;
+   max-height: 20px;
+   -webkit-transition: max-height 0.618s; 
+   -moz-transition: max-height 0.618s; 
+   -ms-transition: max-height 0.618s; 
+   -o-transition: max-height 0.618s; 
+   transition: max-height 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.sizeLarge {
+   width: 32px;
+   height: 32px;
+   max-height: 32px;
+   -webkit-transition: max-height 0.618s; 
+   -moz-transition: max-height 0.618s; 
+   -ms-transition: max-height 0.618s; 
+   -o-transition: max-height 0.618s; 
+   transition: max-height 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.collapsed {
+   max-height: 0px;
+   -webkit-transition: max-height 0.618s; 
+   -moz-transition: max-height 0.618s; 
+   -ms-transition: max-height 0.618s; 
+   -o-transition: max-height 0.618s; 
+   transition: max-height 0.618s;
+   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
